@@ -9,7 +9,7 @@ interface PropsType {
   to: string
   icon: string
   text: string
-  onClick?: () => void
+  onClick?: () => void | any
 }
 
 export const ListMenu = (props: PropsType) => {

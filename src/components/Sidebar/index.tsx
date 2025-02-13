@@ -30,10 +30,40 @@ const Sidebar = () => {
         <div className="items-center block w-auto max-h-screen grow basis-full">
           <ul className="flex flex-col pl-0 mb-0 pt-2">
             <ListMenu icon='fa-house' text='Dashboard' to='/' />
-            <ListMenu icon='fa-table' text='Table' to='/table' />
+            {/* <ListMenu icon='fa-table' text='Table' to='/table' /> */}
             <ListMenu icon='fa-user' text='Profile' to='/profile' />
             <ListMenu icon='fa-right-from-bracket' text='Keluar' onClick={openModal} to='' />
           </ul>
+
+
+          {/* <ul className="flex flex-col pl-0 mb-0 pt-2">
+            <ListMenu icon='fa-square' text='Card' to='/component/card' />
+            <ListMenu icon='fa-square' text='Card' to='/component/card' />
+            <ListMenu icon='fa-square' text='Card' to='/component/card' />
+          </ul> */}
+
+          <ul className="flex flex-col pl-0 mb-0">
+            <li className="relative group">
+              <button className='w-full'
+                onClick={(e) => {
+                  const dropdown = e.currentTarget.nextElementSibling;
+                  if (dropdown) {
+                    dropdown.classList.toggle('hidden');
+                  }
+                }}
+              >
+                <ListMenu icon='fa-chevron-down' text='Components' to='' />
+              </button>
+
+
+              <ul className="flex flex-col pl-0 mb-0 pt-2 bg-slate-100 hidden">
+                <ListMenu icon='fa-square' text='Card' to='/component/card' />
+                <ListMenu icon='fa-square' text='Table' to='/component/table' />
+                <ListMenu icon='fa-square' text='Icon' to='/component/icon' />
+              </ul>
+            </li>
+          </ul>
+
         </div>
       </aside>
 

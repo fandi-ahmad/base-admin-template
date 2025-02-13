@@ -5,7 +5,7 @@ import { BaseTable, TableData, TableHead } from '@/components/Table'
 import { BaseButton, ButtonPrimary } from '@/components/Buttons'
 import { Badge } from '@/components/Badge'
 
-const Table = () => {
+const TablePage = () => {
   return (
     <>
       <Sidebar/>
@@ -14,7 +14,7 @@ const Table = () => {
         <Container>
 
           <div className='flex justify-end mb-4'>
-            <ButtonPrimary text='Upload file baru' icon='fa-plus' />
+            <ButtonPrimary text='tambah' icon='fa-plus' />
           </div>
 
           <ContainerRow className='-mx-3 relative'>
@@ -68,4 +68,4 @@ const Table = () => {
   )
 }
 
-export default Table
+export default TablePage
