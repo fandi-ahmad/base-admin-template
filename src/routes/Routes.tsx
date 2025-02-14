@@ -1,18 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "@/pages/Dashboard";
-import Profile from "@/pages/Profile";
-import { CardPage, TablePage, IconPage } from "@/pages/component";
+import { CardPage, TablePage, IconPage, InputPage } from "@/pages/component";
 
 export const RoutesTemplate = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
         
         <Route path="/component/card" element={<CardPage />} />
         <Route path="/component/table" element={<TablePage />} />
         <Route path="/component/icon" element={<IconPage />} />
+        <Route path="/component/input" element={<InputPage />} />
       </Routes>
     </BrowserRouter>
   )

@@ -11,7 +11,7 @@ interface PropsType {
 export const TableData = (props: PropsType) => {
   return (
     <td colSpan={props.colSpan} rowSpan={props.rowSpan} className={`p-2 ${props.pl || 'pl-6'} bg-transparent border-b whitespace-nowrap shadow-transparent  ${props.className}`}>
-      <span className='text-xs font-semibold leading-tight text-slate-400'>{props.text}</span>
+      <span className='text-xs font-semibold leading-tight text-slate-500'>{props.text}</span>
     </td>
   )
 }

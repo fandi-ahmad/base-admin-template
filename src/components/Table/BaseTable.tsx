@@ -20,7 +20,7 @@ export const BaseTable = (props: PropsType) => {
             {props.filter}
           </div>
           <div className="p-0 ">
-            <table className="items-center w-full mb-0 align-top text-slate-500">
+            <table className="items-center w-full mb-0 align-top">
               <thead className="align-bottom">
                 <tr>
                   {props.thead}
