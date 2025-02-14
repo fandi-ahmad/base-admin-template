@@ -1,5 +1,5 @@
 interface PropsType {
-  required?: boolean
+  isRequired?: boolean
   className?: string
   idField?: string
   text?: string
@@ -16,7 +16,7 @@ const inputClass = 'w-full border border-gray-300 rounded px-4 py-2 focus:outlin
 
 export const InputText = (props: PropsType) => {
   const required = () => {
-    if (props.required) {
+    if (props.isRequired) {
       return <span className='text-red-400'>*</span>
     }
   }

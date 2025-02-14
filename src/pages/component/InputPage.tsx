@@ -96,7 +96,7 @@ const InputPage = () => {
               </tr>
 
               <tr>
-                <TableData text={'required'} />
+                <TableData text={'isRequired'} />
                 <TableData text={'for show * mark'} />
                 <TableData text={'boolean'} />
               </tr>
