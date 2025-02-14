@@ -4,11 +4,12 @@ import { ModalHandleDTO } from '@/interface/ModalHandleDTO';
 
 interface ModalProps {
   title?: string;
-  message?: string;
+  children: React.ReactNode;
   onClose?: () => void;
+  onSave?: () => void
 }
 
-export const ModalAlert = forwardRef<ModalHandleDTO, ModalProps>(({ title, message, onClose }, ref) => {
+export const ModalForm = forwardRef<ModalHandleDTO, ModalProps>(({ title, children, onClose, onSave }, ref) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   // Expose open and close methods
@@ -22,7 +23,7 @@ export const ModalAlert = forwardRef<ModalHandleDTO, ModalProps>(({ title, messa
       if (dialogRef.current) {
         dialogRef.current.close();
       }
-    },
+    }
   }));
 
   return (
@@ -42,16 +43,23 @@ export const ModalAlert = forwardRef<ModalHandleDTO, ModalProps>(({ title, messa
           &times;
         </button>
       </div>
-      <p className="text-gray-600">{message || 'This is a modal message'}</p>
+      <div className="text-gray-600">
+        {children}
+      </div>
       <div className="mt-6 flex justify-end space-x-3">
         
-        <BaseButton text='Close' className='bg-slate-500 hover:bg-slate-600'
+        <BaseButton text='Kembali' bgClassName='bg-slate-500 hover:bg-slate-600'
           onClick={() => {
             if (onClose) onClose();
             if (dialogRef.current) dialogRef.current.close();
           }}
         />
-        <BaseButton text='Confirm' className='bg-blue-500 hover:bg-blue-600'onClick={() => {if (dialogRef.current) dialogRef.current.close()}} />
+        <BaseButton text='Simpan' bgClassName='bg-blue-500 hover:bg-blue-600'
+          onClick={() => {
+            if (onSave) onSave();
+            // if (dialogRef.current) dialogRef.current.close()
+          }}
+        />
         
       </div>
     </dialog>

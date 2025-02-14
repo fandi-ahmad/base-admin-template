@@ -1,18 +1,9 @@
-import { useRef } from 'react'
 import { useGlobalState } from '@/state/state'
-import { ModalHandle, ModalAlert } from '@/components/Modals/ModalAlert'
 import { ListMenu } from '@/components/Sidebar/ListMenu'
 import logoExample from "@/assets/vite.svg"
 
 const Sidebar = () => {
   const [asideClass, setAsideClass] = useGlobalState('asideClass')
-
-  const modalRef = useRef<ModalHandle>(null);
-  const openModal = () => {
-    if (modalRef.current) {
-      modalRef.current.open();
-    }
-  };
 
   return (
     <>
@@ -36,7 +27,7 @@ const Sidebar = () => {
             <ListMenu icon='fa-square' text='Table' to='/component/table' />
             <ListMenu icon='fa-square' text='Icon' to='/component/icon' />
             <ListMenu icon='fa-square' text='Input' to='/component/input' />
-            <ListMenu icon='fa-right-from-bracket' text='Keluar' onClick={openModal} to='' />
+            <ListMenu icon='fa-square' text='Modal' to='/component/modal' />
           </ul>
 
           {/* <ul className="flex flex-col pl-0 mb-0">
@@ -62,14 +53,6 @@ const Sidebar = () => {
           </ul> */}
         </div>
       </aside>
-
-      {/* alert logout */}
-      <ModalAlert
-        ref={modalRef}
-        title="Log Out Confirmation"
-        message="Are you sure you want to log out? This action cannot be undone."
-      />
-
     </>
   )
 }
